@@ -520,7 +520,7 @@ footer a:hover{
     background: url('img/hero-mobile.png') center/cover no-repeat !important;
     
     /* Altura ajustada para a proporção 4:3 da sua imagem */
-    height: 320px !important; 
+    height: 350px !important; 
     aspect-ratio: auto !important;
     border-bottom: solid 3px white;
   }
