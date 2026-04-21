@@ -1,0 +1,588 @@
+/* ================= CSS ================= */
+
+:root {
+  /* Cores do site */
+  --verdeClaro: #a4b792;
+  --verdeEscuro: #718c56;
+  --marrom: #805538;
+  --bege: #f5dbb3;
+}
+
+* {
+  /* Reset padrão */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Fundo geral */
+  background: var(--verdeClaro);
+  color: var(--marrom);
+}
+
+.hero {
+  /* Banner principal */
+  background: url('img/hero.png') center/cover;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: solid 5px white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.botao-flutuante {
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  z-index: 999;
+
+  width: 40px;
+  height: 40px;
+
+  cursor: pointer;
+
+  animation: pulsar 1.5s infinite ease-in-out;
+}
+
+/* animação de pulsar */
+@keyframes pulsar {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#detalhes {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  color: white;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+#detalhes img {
+  width: 350px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.detalhesTexto {
+  max-width: 500px;
+  font-size: 1.1rem;
+}
+
+.detalhesTexto h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  /* color: var(--marrom); */
+}
+
+.detalhesTexto a {
+  display: inline-block;
+  margin-top: 20px;
+color: white;
+}
+
+.detalhesTexto a:hover {
+  text-decoration: underline;
+  color: var(--verdeEscuro);
+}
+
+#listaPresentes {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  color: white;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+#listaPresentes img {
+  width: 350px;
+  height: auto;
+  flex-shrink: 0;
+  order: -1;
+}
+
+.listaTextos {
+  font-size: 1.1rem;
+  max-width: 500px;
+  text-align: right;
+}
+
+.listaTextos h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  /* color: var(--marrom); */
+}
+
+#mural {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  color: white;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+#mural img {
+  width: 350px;
+  height: auto;
+  flex-shrink: 0;
+  order: -1;
+}
+
+.muralTextos {
+  font-size: 1.1rem;
+  max-width: 500px;
+  text-align: right;
+}
+
+.muralTextos h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  /* color: var(--marrom); */
+}
+
+#recados {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-height: 350px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+#recados::-webkit-scrollbar {
+  width: 8px;
+}
+
+#recados::-webkit-scrollbar-thumb {
+  background: rgba(128, 85, 56, 0.45);
+  border-radius: 999px;
+}
+
+section {
+  /* Espaçamento das seções */
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  /* Centraliza conteúdo */
+  max-width: 1100px;
+  margin: auto;
+  width: 100%;
+}
+
+.container h2, .container p {
+  /* Títulos e parágrafos das seções */
+  color: white;
+}
+
+.grid {
+  /* Grid responsivo dos itens */
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  /* Cards dos itens e recados */
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  color: var(--marrom);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card img {
+  /* Imagem do item */
+  width: 100%;
+  height: 220px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.card.esgotado img {
+  filter: grayscale(100%);
+}
+
+.card button.esgotado {
+  filter: grayscale(100%);
+}
+
+.card .progress {
+  width: 100%;
+  height: 10px;
+  background: #efefef;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.card .bar {
+  height: 100%;
+  background: rgba(128, 85, 56, 0.25);
+  border-radius: 999px;
+}
+
+
+.card h3, .card p {
+  /* Título e descrição do item */
+  color: var(--marrom);
+}
+
+.card > button {
+  margin-top: auto;
+}
+
+button {
+  /* Botões padrão */
+  background: var(--bege);
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 10px;
+  color: var(--marrom);
+}
+
+button:hover {
+  /* Hover */
+  background: var(--marrom);
+  color: white;
+}
+
+.mural-button {
+  background-color: var(--bege);
+  color: var(--marrom);
+  /* border: 2px solid rgba(255,255,255,0.6); */
+  padding: 14px 22px;
+  border-radius: 14px;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.mural-button:hover {
+  background-color: var(--marrom);
+  color: white;
+  /* transform: translateY(-1px); */
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 20px;
+  z-index: 1000;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-card,
+.modal-content {
+  background: white;
+  border-radius: 24px;
+  width: min(520px, 100%);
+  padding: 28px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+}
+
+.modal-card h3 {
+  margin-bottom: 24px;
+  color: var(--marrom);
+  font-size: 1.8rem;
+}
+
+.modal-card label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--marrom);
+}
+
+.modal-card input,
+.modal-card textarea {
+  width: 100%;
+  border: 1px solid #d6d6d6;
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  font-family: 'Poppins', sans-serif;
+  color: var(--marrom);
+}
+
+.modal-card textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.modal-actions button {
+  min-width: 120px;
+}
+
+.cancel-button {
+  background: #f2f2f2;
+  color: var(--marrom);
+}
+
+.cancel-button:hover {
+  background: #dedede;
+}
+
+#recados {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.progress {
+  /* Barra de fundo */
+  height: 8px;
+  background: #eee;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.bar {
+  /* Parte preenchida */
+  height: 8px;
+  background: var(--verdeEscuro);
+}
+
+#pix {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+#pix img {
+  width: 350px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.pixTexto {
+  max-width: 500px;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.pixTexto h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  /* color: var(--marrom); */
+}
+
+.pixImg {
+  display: flex;
+  align-items: center;
+}
+
+.pixImg img {
+  width: 350px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.pix-box {
+  /* Caixa do PIX */
+  /* background: white; */
+  /* padding: 10px; */
+  /* border-radius: 20px; */
+  /* text-align: center; */
+  margin-top: 20px;
+}
+
+.pix-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: var(--marrom);
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  background-color: var(--bege);
+  padding: 10px 20px;
+  border-radius: 15px;
+}
+
+.pix-link:hover {
+  background-color: var(--marrom);
+  color: white;
+}
+
+.mural input, .mural textarea {
+  /* Inputs do mural */
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  max-width: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  border: none;
+}
+
+.modal {
+  /* Fundo escuro do modal */
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  /* Caixa do modal */
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+footer {
+  /* Rodapé */
+  text-align: center;
+  padding: 30px;
+  color: white;
+}
+
+footer a{
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover{
+  color: var(--marrom);
+}
+
+/* ========================================== */
+/* ======== RESPONSIVIDADE (MOBILE) ========= */
+/* ========================================== */
+
+@media screen and (max-width: 768px) {
+
+  /* 1. Ajuste do Hero com sua nova imagem 800x600 */
+  .hero {
+    /* Substitua pelo nome exato do seu arquivo */
+    background: url('img/hero-mobile.png') center/cover no-repeat !important;
+    
+    /* Altura ajustada para a proporção 4:3 da sua imagem */
+    height: 320px !important; 
+    aspect-ratio: auto !important;
+    border-bottom: solid 3px white;
+  }
+
+  /* 2. Remoção das imagens das seções conforme solicitado */
+  #detalhes img, 
+  #mural img {
+    display: none !important;
+  }
+
+  /* 3. Alinhamento central de todos os textos */
+  .container h2, 
+  .container p,
+  .detalhesTexto, 
+  .listaTextos, 
+  .muralTextos, 
+  .pixTexto,
+  .card {
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* 4. Padronização de espaçamento entre as sections */
+  section {
+    padding: 40px 20px !important;
+  }
+
+  /* 5. Transformação da lista de presentes em Carrossel */
+  .grid {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 10px 0 20px 0;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .grid .card {
+    flex: 0 0 85% !important; /* Cada card ocupa 85% da largura */
+    scroll-snap-align: center;
+  }
+
+  /* Esconde a barra de rolagem do carrossel */
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 6. Ajuste das imagens dos cards para não cortar */
+  .card img {
+    width: 100%;
+    height: auto !important;
+    max-height: 200px;
+    object-fit: contain !important; /* Exibe a imagem inteira da fralda */
+    background: #fff;
+  }
+
+  /* Ajuste dos botões e barras nos cards */
+  .card .progress, 
+  .card button {
+    width: 100%;
+    margin-top: 10px;
+  }
+}

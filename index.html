@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <!-- Configurações básicas da página -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chá do Miguel</title>
+
+  <!-- Importa o CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Fonte bonita -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- TOPO DO SITE (imagem + título) -->
+<div class="hero"></div>
+
+<a href="#listaPresentes" class="botao-flutuante">
+      <img src="botaoGift.png" alt="Botão Flutuante" />
+    </a>
+
+<section id="detalhes">
+      <div class="detalhesTexto">
+        <h1>Detalhes do Evento</h1>
+        <p><strong>Data:</strong> 09 de Maio de 2026</p>
+        <p><strong>Horário:</strong> 15:00H</p>
+        <p><strong>Endereço:</strong> <a href="https://maps.app.goo.gl/oyjQW3827Muvk8eVA" target="_blank">Rua Vicente Feola, 1148 - Santa Helena</a></p>
+        <br>
+        <p><strong>Contamos com a sua presença!</strong></p>
+        
+      </div>
+      <div class="detalhesImg">
+        <img src="img/Ursinhos/6.png" alt="" />
+      </div>
+    </section>
+
+    <section id="listaPresentes">
+        <div class="listaImg">
+          <img src="img/Ursinhos/4.png" alt="">
+        </div>
+      <div class="listaTextos">
+        <h1>LISTA DE PRESENTES</h1>
+        <p>
+          Aqui você pode escolher um presente para o Miguel! <br />
+          Lembrando que nosso foco principal são as fraldas, <br>
+          os mimos são apenas se o coração mandar. <br /><br />
+          <strong>Depois de escolher o presente, não será possível alterá-lo.</strong>
+        </p>
+      </div>
+
+    </section>
+
+<!-- LISTA DE PRESENTES -->
+<section>
+  <div class="container">
+    <h2>Escolha seu presente</h2>
+    <p>Sugestão de marcas para as fraldas: <strong>Pampers, Huggies, BabySec ou Mili</strong></p>
+    <p>* As imagens são meramente ilustrativas.</p>
+
+    <!-- Aqui o JS insere os itens automaticamente -->
+    <div class="grid" id="lista"></div>
+  </div>
+</section>
+
+<!-- PIX -->
+<section id="pix">
+      <div class="pixTexto">
+        <h1>PIX</h1>
+        <p>Caso não consiga escolher um presente, você pode fazer um PIX para ajudar a mamãe e o papai com os custos do evento.</p>
+        
+        <!-- Caixa do PIX -->
+        <!-- <div class="pix-box">
+          <p id="pixKey">49999612501</p> -->
+          
+          <!-- Link para copiar a chave -->
+          <a href="https://nubank.com.br/cobrar/njp0u/69dae480-d5dd-48e8-aa78-b164a8e0217c" target="_blank" class="pix-link">Acessar Chave PIX</a>
+        </div>
+      </div>
+      <div class="pixImg">
+        <img src="img/Ursinhos/3.png" alt="" />
+      </div>
+</section>
+
+<!-- MURAL DE RECADOS -->
+<section id="mural">
+  <div class="muralImg">
+    <img src="img/Ursinhos/5.png" alt="">
+  </div>
+  <div class="muralTextos">
+    <h2>Mural de Recados</h2>
+    <p>Deixe uma mensagem de carinho para o Miguel ou uma dica para os papais de primeira viagem</p>
+
+    <button class="mural-button" onclick="abrirModalRecado()">Deixar mensagem</button>
+
+    <!-- Onde aparecem os recados -->
+    <div id="recados"></div>
+  </div>
+</section>
+
+<!-- MODAL DE RECADOS -->
+<div id="modalRecado" class="modal modal-recado">
+  <div class="modal-card">
+    <h3>Deixar um recado</h3>
+    <label for="nome">Seu nome</label>
+    <input id="nome" placeholder="Digite seu nome" type="text">
+    <label for="mensagem">Mensagem</label>
+    <textarea id="mensagem" placeholder="Escreva sua mensagem carinhosa..."></textarea>
+    <div class="modal-actions">
+      <button class="cancel-button" onclick="fecharModalRecado()">Cancelar</button>
+      <button onclick="enviarRecado()">Enviar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL DE CONFIRMAÇÃO -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+
+    <!-- Texto dinâmico -->
+    <p id="modalTexto"></p>
+
+    <!-- Botões do modal -->
+    <button onclick="confirmarReserva()">Confirmar</button>
+    <button onclick="fecharModal()">Cancelar</button>
+  </div>
+</div>
+
+<footer>Com amor, família do Miguel.
+  <p>Qualquer dúvida entrar em contato com a mamãe pelo Whatsapp: <br>
+    <a href="https://wa.me/5549999612501" target="_blank">(49)999612501</a></p>
+
+</footer>
+
+<!-- Importa o JS -->
+<script type="module" src="script.js"></script>
+</body>
+</html>
+
+
+
